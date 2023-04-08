@@ -1,7 +1,9 @@
-﻿namespace JwtAuthentication.Interfaces
+﻿using JwtAuthentication.Models;
+
+namespace JwtAuthentication.Interfaces
 {
     public interface IJwtTokenManager
     {
-        string Authenticate(string userName, string password);
+        string Authenticate(User user);
     }
 }

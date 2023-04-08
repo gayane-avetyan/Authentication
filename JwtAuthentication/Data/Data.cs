@@ -10,9 +10,10 @@ namespace JwtAuthentication.Data
                 "Balmy", "Hot", "Sweltering", "Scorching"
             };
 
-        public static User[] Users = new[]
+        public static List<User> Users = new List<User>
         {
-            new User{ UserName = "username", Password = "password" }
+            new User{ UserName = "username", Password = "password", Role = "user"},
+            new User{ UserName = "admin", Password = "admin", Role = "admin"}
         };
     }
 }

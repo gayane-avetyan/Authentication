@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj": {}
+    "D:\\Authentication\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj": {}
   },
   "projects": {
-    "D:\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj": {
+    "D:\\Authentication\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
+        "projectUniqueName": "D:\\Authentication\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
         "projectName": "JwtAuthentication",
-        "projectPath": "D:\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
+        "projectPath": "D:\\Authentication\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
         "packagesPath": "C:\\Users\\Gayane\\.nuget\\packages\\",
-        "outputPath": "D:\\Authentication\\JwtAuthentication\\obj\\",
+        "outputPath": "D:\\Authentication\\Authentication\\JwtAuthentication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

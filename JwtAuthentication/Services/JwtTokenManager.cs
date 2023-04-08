@@ -1,4 +1,5 @@
 ﻿using JwtAuthentication.Interfaces;
+using JwtAuthentication.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,16 +14,17 @@ namespace JwtAuthentication.Services
         {
             _configuration = configuration;
         }
-        public string Authenticate(string userName, string password)
+        public string Authenticate(User user)
         {
-            if (!Data.Data.Users.Any(x => x.UserName.Equals(userName) && x.Password.Equals(password)))
+            if (!Data.Data.Users.Any(x => x.UserName.Equals(user.UserName) && x.Password.Equals(user.Password)))
                 return string.Empty;
 
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new Claim[]
                     {
-                        new Claim(ClaimTypes.NameIdentifier, userName)
+                        new Claim(ClaimTypes.NameIdentifier, user.UserName),
+                        new Claim(ClaimTypes.Role, user.Role)
                     }),
                 Expires = DateTime.UtcNow.AddMinutes(30),
                 SigningCredentials = new SigningCredentials(

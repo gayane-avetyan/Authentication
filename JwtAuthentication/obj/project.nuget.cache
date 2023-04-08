@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9nHX2z3C5V+3cBni/KAs2HAwx7RRa7vDcBcJbgnHz+C6xUPX5bY7SDu90eNT/mmrYVATt4GncspE5FnOyFHJcw==",
+  "dgSpecHash": "uFF7f4wMxfONdRjnVcFKhMvexsqLz225pelS01e1+1cYSD89Njkh+zYUKRxGP7eqZDqMsJLfHn7hoxSntZ5Yxg==",
   "success": true,
-  "projectFilePath": "D:\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
+  "projectFilePath": "D:\\Authentication\\Authentication\\JwtAuthentication\\JwtAuthentication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gayane\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.15\\microsoft.aspnetcore.authentication.jwtbearer.6.0.15.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

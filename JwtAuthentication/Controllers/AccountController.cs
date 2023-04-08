@@ -1,6 +1,9 @@
-﻿using JwtAuthentication.Interfaces;
+﻿using JwtAuthentication.Dto;
+using JwtAuthentication.Interfaces;
+using JwtAuthentication.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Win32;
 
 namespace JwtAuthentication.Controllers
 {
@@ -16,14 +19,38 @@ namespace JwtAuthentication.Controllers
 
         [AllowAnonymous]
         [HttpPost("[action]")]
-        public IActionResult Login(string userName, string password)
+        public IActionResult Register([FromBody] Register request)
         {
-            var token = _jwtTokenManager.Authenticate(userName, password);
+            var user = new User
+            {
+                UserName = request.UserName,
+                Password = request.Password,
+                Role = request.Role
+            };
+
+            Data.Data.Users.Add(user);
+
+            return Ok(user);
+        }
+
+
+        [AllowAnonymous]
+        [HttpPost("[action]")]
+        public IActionResult Login([FromBody] Login request)
+        {
+            var user = Data.Data.Users
+                .Where(x => x.UserName == request.UserName)
+                .FirstOrDefault();
+
+            if (user == null)
+                return BadRequest("Invalid user");
+
+            var token = _jwtTokenManager.Authenticate(user);
 
             if (string.IsNullOrEmpty(token))
                 return Unauthorized();
 
-            return Ok($"authenticated with token: {token}");
+            return Ok($"bearer {token}");
         }
     }
 }
